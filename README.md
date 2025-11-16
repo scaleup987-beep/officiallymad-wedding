@@ -8,6 +8,8 @@ This repository contains the static website for Deshna & Mehul’s wedding. It i
 - `index.html`: All markup, styles, and scripts (self-contained)
 - `wedding-logo.jpeg`: Logo displayed in the header
 - `CNAME`: Custom domain configuration for GitHub Pages
+ - `Wedding-design-theme.jpeg`: Header background overlay for on-brand look
+ - `wedding-design-color-palette.pdf`: Reference palette (not required at runtime)
 
 **Local Preview**
 - Double-click `index.html` to open in a browser, or serve locally to avoid any asset/path quirks:
@@ -58,3 +60,25 @@ Recommendation: If you want fade‑in effects, scope them to a class instead of 
 - If extracting CSS/JS to separate files later, remember to update paths and consider cache‑busting (e.g., `?v=1`).
 
 — #OfficiallyMaD 💕
+
+## Theme Palette (2025)
+
+The site now uses the provided wedding palette via CSS variables. Adjust these in `index.html` (Theme Overrides section) to tweak the look:
+
+```
+:root {
+	--color-primary: #AB6287;  /* Rose Mauve */
+	--color-accent:  #938068;  /* Taupe Accent */
+	--color-bg:      #F6F6EA;  /* Soft Background */
+	--color-border:  #DDDDD8;  /* Subtle Border */
+	--color-muted:   #AEADA1;  /* Muted Neutral */
+	--color-surface: #FFFFFF;  /* Surfaces */
+}
+```
+
+Where it’s used:
+- Header overlay gradient, nav highlights, section headings.
+- Card borders/shadows, event accents, link/button backgrounds.
+- Countdown border/number color, quick info bar, scroll progress.
+
+Tip: If you need a different image for the header, replace `Wedding-design-theme.jpeg` at repo root and keep the same filename.

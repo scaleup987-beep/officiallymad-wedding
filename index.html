@@ -1529,6 +1529,93 @@
                 font-size: 1.9rem !important;
             }
         }
+        
+        /* ==============================
+           Theme Overrides — OfficiallyMaD 2025 Palette
+           Provided palette:
+           - #DDDDD8, #AB6287, #F6F6EA, #938068, #AEADA1
+           This section gently overrides colors to match the theme
+           without changing the existing layout or interactions.
+           ============================== */
+        :root {
+            --color-primary: #AB6287;   /* Rose Mauve */
+            --color-accent:  #938068;   /* Taupe Accent */
+            --color-bg:      #F6F6EA;   /* Soft Background */
+            --color-border:  #DDDDD8;   /* Subtle Border */
+            --color-muted:   #AEADA1;   /* Muted Neutral */
+            --color-surface: #FFFFFF;   /* Surfaces */
+        }
+
+        /* Base & Surfaces */
+        body { background: var(--color-bg); }
+        section {
+            border-color: var(--color-border);
+            box-shadow: 0 4px 12px rgba(171, 98, 135, 0.15);
+        }
+
+        /* Header with tasteful theme image overlay */
+        .header {
+            background: linear-gradient(135deg, rgba(171, 98, 135, 0.92), rgba(147, 128, 104, 0.92)),
+                        url('Wedding-design-theme.jpeg') center/cover no-repeat;
+        }
+        .header::before, .header::after { opacity: 0.06; }
+        .header .hashtag { color: var(--color-accent); }
+        .header h1 {
+            background: linear-gradient(45deg, #ffffff, var(--color-bg), #ffffff);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* Navigation */
+        nav { border-bottom-color: var(--color-primary); }
+        nav a { color: var(--color-primary); }
+        nav a:hover, nav a.active { background: var(--color-primary); color: #fff; }
+
+        /* Headings */
+        h2 { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+
+        /* Cards & Items */
+        .event-card {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+            border-left-color: var(--color-primary);
+            box-shadow: 0 2px 8px rgba(171, 98, 135, 0.1);
+        }
+        .event-item { border-color: var(--color-border); }
+        .event-item:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(171, 98, 135, 0.2); }
+        .event-time { color: var(--color-primary); }
+
+        .contact-card, .partner-card {
+            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
+            border-color: var(--color-border);
+            box-shadow: 0 2px 8px rgba(171, 98, 135, 0.15);
+        }
+        .contact-card:hover, .partner-card:hover {
+            border-color: var(--color-primary);
+            box-shadow: 0 6px 16px rgba(171, 98, 135, 0.25);
+        }
+        .contact-card h3, .partner-card h3 { color: var(--color-primary); }
+
+        /* Buttons & Links */
+        .venue-link, .contact-card .venue-link { background: var(--color-primary); }
+        .venue-link:hover, .contact-card .venue-link:hover { background: var(--color-accent); }
+        .wishes-button { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+        .whatsapp-float { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); box-shadow: 0 8px 25px rgba(171, 98, 135, 0.5); }
+        .whatsapp-float:hover { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%); box-shadow: 0 12px 35px rgba(171, 98, 135, 0.7); }
+
+        /* Tabs */
+        .tab-btn { border-color: var(--color-primary); color: var(--color-primary); }
+        .tab-btn.active { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+
+        /* Countdown */
+        .countdown-box { border-color: var(--color-primary); }
+        .countdown-number { color: var(--color-primary); }
+
+        /* Utility bars */
+        .quick-info-bar { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+        .scroll-progress { background: linear-gradient(90deg, var(--color-primary), var(--color-accent)); }
+
+        /* Links in cards */
+        .contact-card a { color: var(--color-primary); }
+        .contact-card a:hover { color: var(--color-accent); }
     </style>
 </head>
 <body>
