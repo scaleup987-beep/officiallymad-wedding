@@ -19,16 +19,18 @@
             background: #f8f3ed;
             color: #333;
             line-height: 1.8;
-            font-size: 0.95rem;
+            font-size: 16px;
             font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .header {
             background: linear-gradient(135deg, #d8779b 0%, #c85a85 100%);
             color: white;
-            padding: 3rem 2rem;
+            padding: 2rem 1.5rem;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             position: relative;
             overflow: hidden;
         }
@@ -61,12 +63,27 @@
 
         .wedding-logo {
             max-width: 100%;
-            width: 500px;
+            width: 350px;
             height: auto;
-            max-height: 400px;
+            max-height: 300px;
             object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .wedding-logo {
+                width: 200px;
+                max-height: 180px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wedding-logo {
+                width: 160px;
+                max-height: 150px;
+            }
         }
 
         .header-banner {
@@ -103,7 +120,7 @@
         }
 
         .header .dates {
-            font-size: 1.1rem;
+            font-size: 16px;
             margin-top: 1rem;
             position: relative;
             z-index: 1;
@@ -132,7 +149,7 @@
         nav a {
             color: #c85a85;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 16px;
             font-weight: 600;
             transition: all 0.3s;
             padding: 0.5rem 1rem;
@@ -217,7 +234,7 @@
 
         .event-time {
             color: #d8779b;
-            font-size: 1.1rem;
+            font-size: 16px;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
@@ -632,7 +649,7 @@
             }
 
             .header .hashtag {
-                font-size: 1.1rem;
+                font-size: 16px;
             }
 
             .header .dates {
@@ -794,7 +811,7 @@
 
         /* Fluid typography */
         html {
-            font-size: clamp(14px, 2vw, 16px);
+            font-size: 16px;
         }
 
         /* Better touch targets */
@@ -1422,12 +1439,67 @@
             z-index: 9999;
             transition: width 0.1s ease;
         }
+
+        /* Enhanced Mobile Readability - CRITICAL OVERRIDES */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px !important;
+            }
+            .event-name {
+                font-size: 1.2rem !important;
+                font-weight: 600;
+            }
+            .event-time {
+                font-size: 1.05rem !important;
+            }
+            .event-details {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+            }
+            .countdown-number {
+                font-size: 2.2rem !important;
+            }
+            .countdown-label {
+                font-size: 0.85rem !important;
+            }
+            h2 {
+                font-size: 2rem !important;
+            }
+            .tab-btn {
+                font-size: 0.95rem !important;
+                padding: 0.9rem 1.3rem !important;
+            }
+            .contact-card, .partner-card {
+                font-size: 1rem;
+            }
+            .contact-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px !important;
+            }
+            .event-name {
+                font-size: 1.15rem !important;
+            }
+            .event-time {
+                font-size: 1rem !important;
+            }
+            h2 {
+                font-size: 1.8rem !important;
+            }
+            .header h1 {
+                font-size: 1.9rem !important;
+            }
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="wedding-logo.jpeg" alt="Deshna & Mehul Wedding Logo" class="wedding-logo">
+            <img src="wedding-logo.jpeg" alt="Deshna & Mehul Wedding Logo" class="wedding-logo" onerror="this.style.display='none'">
         </div>
         <h1>DESHNA & MEHUL</h1>
         <div class="hashtag">#OfficiallyMaD</div>
@@ -1665,7 +1737,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 0.5rem;">📍 Main Venue</p>
+                <p style="font-size: 16px; color: #666; margin-bottom: 0.5rem;">📍 Main Venue</p>
                 <a href="https://maps.app.goo.gl/RqeHB8XoS68tKZ7LA" target="_blank" class="venue-link">
                     🗺️ Open in Maps
                 </a>
@@ -1726,7 +1798,7 @@
         <!-- Partners Section -->
         <section id="partners" class="fade-in">
             <h2>Our Partners</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
+            <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 16px;">
                 Special thanks to our amazing partners who made this celebration possible
             </p>
             
