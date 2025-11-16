@@ -1378,6 +1378,12 @@
             animation: fadeInImage 1s ease-in forwards;
         }
 
+        /* Ensure critical images never stay hidden if animations are reduced/blocked */
+        .wedding-logo {
+            opacity: 1 !important;
+            animation: none !important;
+        }
+
         @keyframes fadeInImage {
             to {
                 opacity: 1;
