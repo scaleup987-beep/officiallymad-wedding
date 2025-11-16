@@ -594,7 +594,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, #c85a85 0%, #d8779b 100%);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
             color: white;
             text-align: center;
             padding: 2rem;
@@ -607,36 +607,31 @@
             font-size: 1.8rem;
             font-weight: 600;
             font-style: italic;
+            color: var(--color-bg);
         }
 
         footer p {
             font-family: 'Lato', sans-serif;
             font-weight: 400;
+            color: var(--color-surface);
+        }
+
+        footer::before, footer::after {
+            content: '🌸';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            opacity: 0.2;
+            color: var(--color-bg);
         }
 
         footer::before {
-            content: '🌸';
-            position: absolute;
             left: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 3rem;
-            opacity: 0.2;
         }
 
         footer::after {
-            content: '🌸';
-            position: absolute;
             right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 3rem;
-            opacity: 0.2;
-        }
-
-        .footer-heart {
-            font-size: 2rem;
-            margin: 1rem 0;
         }
 
         @media (max-width: 768px) {
