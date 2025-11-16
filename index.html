@@ -1534,20 +1534,20 @@
            ============================== */
         :root {
             --color-primary: #E2D1D0; /* Updated dominant color from theme image */
-            --color-accent:  #938068;   /* Taupe Accent */
-            --color-bg:      #F6F6EA;   /* Soft Background */
-            --color-border:  #DDDDD8;   /* Subtle Border */
-            --color-muted:   #AEADA1;   /* Muted Neutral */
+            --color-accent:  #C8A6A6; /* Refined accent color closer to theme */
+            --color-bg:      #F8F3ED; /* Softer background matching theme */
+            --color-border:  #EAD9D9; /* Subtle border closer to theme */
+            --color-muted:   #D6C4C4; /* Muted neutral refined */
             --color-surface: #FFFFFF;   /* Surfaces */
         }
 
-        /* Update header background to use the new primary color */
+        /* Update header background to use the refined primary color */
         .header {
-            background: linear-gradient(135deg, rgba(226, 209, 208, 0.92), rgba(147, 128, 104, 0.92)),
+            background: linear-gradient(135deg, rgba(226, 209, 208, 0.92), rgba(200, 166, 166, 0.92)),
                         url('Wedding-design-theme.jpeg') center/cover no-repeat;
         }
 
-        /* Update navigation and buttons to reflect the new primary color */
+        /* Update navigation and buttons to reflect the refined primary color */
         nav a { color: var(--color-primary); }
         nav a:hover, nav a.active { background: var(--color-primary); color: #fff; }
 
@@ -1557,76 +1557,938 @@
         .whatsapp-float { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); box-shadow: 0 8px 25px rgba(226, 209, 208, 0.5); }
         .whatsapp-float:hover { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%); box-shadow: 0 12px 35px rgba(226, 209, 208, 0.7); }
 
-        /* Base & Surfaces */
-        body { background: var(--color-bg); }
-        section {
-            border-color: var(--color-border);
-            box-shadow: 0 4px 12px rgba(171, 98, 135, 0.15);
+        /* Update footer background to use the refined primary and accent colors */
+        footer {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            position: relative;
         }
 
-        /* Header with tasteful theme image overlay */
-        .header {
-            background: linear-gradient(135deg, rgba(171, 98, 135, 0.92), rgba(147, 128, 104, 0.92)),
-                        url('Wedding-design-theme.jpeg') center/cover no-repeat;
-        }
-        .header::before, .header::after { opacity: 0.06; }
-        .header .hashtag { color: var(--color-accent); }
-        .header h1 {
-            background: linear-gradient(45deg, #ffffff, var(--color-bg), #ffffff);
-            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        footer h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--color-bg);
         }
 
-        /* Navigation */
-        nav { border-bottom-color: var(--color-primary); }
-        nav a { color: var(--color-primary); }
-        nav a:hover, nav a.active { background: var(--color-primary); color: #fff; }
+        footer p {
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            color: var(--color-surface);
+        }
 
-        /* Headings */
-        h2 { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+        footer::before, footer::after {
+            content: '🌸';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            opacity: 0.2;
+            color: var(--color-bg);
+        }
 
-        /* Cards & Items */
+        footer::before {
+            left: 10%;
+        }
+
+        footer::after {
+            right: 10%;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 2rem 1rem;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+                letter-spacing: 0.05em;
+            }
+
+            .header .hashtag {
+                font-size: 16px;
+            }
+
+            .header .dates {
+                font-size: 0.95rem;
+            }
+
+            .wedding-logo {
+                width: 100%;
+                max-width: 280px;
+            }
+
+            nav {
+                padding: 0.5rem;
+            }
+
+            nav ul {
+                gap: 0.3rem;
+                padding: 0.3rem;
+            }
+
+            nav a {
+                font-size: 0.75rem;
+                padding: 0.4rem 0.7rem;
+            }
+
+            section {
+                padding: 1.2rem;
+                margin: 1rem 0;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .countdown-container {
+                gap: 0.8rem;
+            }
+
+            .countdown-box {
+                min-width: 65px;
+                padding: 0.8rem 1rem;
+            }
+
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+
+            .countdown-label {
+                font-size: 0.65rem;
+            }
+
+            .event-card {
+                padding: 1.2rem;
+                width: 90%;
+            }
+
+            .event-day {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .event-item {
+                padding: 1rem;
+                margin: 1rem 0;
+            }
+
+            .event-name {
+                font-size: 1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .event-time {
+                font-size: 0.9rem;
+            }
+
+            .event-details {
+                font-size: 0.85rem;
+                margin-left: 0.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .partner-card, .contact-card {
+                padding: 1.2rem;
+            }
+
+            .wishes-button, .venue-link {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            .tab-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+
+            .quick-info-bar {
+                font-size: 0.8rem;
+                padding: 0.6rem;
+            }
+
+            .footer-heart {
+                font-size: 1.5rem;
+            }
+
+            footer h3 {
+                font-size: 1.5rem;
+            }
+
+            footer p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .wedding-logo {
+                max-width: 240px;
+            }
+
+            .countdown-box {
+                min-width: 55px;
+                padding: 0.6rem 0.8rem;
+            }
+
+            .countdown-number {
+                font-size: 1.3rem;
+            }
+
+            .countdown-label {
+                font-size: 0.6rem;
+            }
+
+            nav a {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+
+            .event-card {
+                width: 95%;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Fluid typography */
+        html {
+            font-size: 16px;
+        }
+
+        /* Better touch targets */
+        @media (hover: none) and (pointer: coarse) {
+            .event-item, .tab-btn, .emoji-btn, .quick-action-btn {
+                min-height: 44px;
+                min-width: 44px;
+            }
+        }
+
+        /* Swipeable carousel for event days */
+        .days-carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 1rem;
+            padding: 1rem 0;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .days-carousel::-webkit-scrollbar {
+            display: none;
+        }
+
         .event-card {
-            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
-            border-left-color: var(--color-primary);
-            box-shadow: 0 2px 8px rgba(171, 98, 135, 0.1);
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+            width: 100%;
         }
-        .event-item { border-color: var(--color-border); }
-        .event-item:hover { border-color: var(--color-primary); box-shadow: 0 4px 12px rgba(171, 98, 135, 0.2); }
-        .event-time { color: var(--color-primary); }
 
-        .contact-card, .partner-card {
-            background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-bg) 100%);
-            border-color: var(--color-border);
-            box-shadow: 0 2px 8px rgba(171, 98, 135, 0.15);
+        @media (max-width: 768px) {
+            .event-card {
+                width: 90%;
+            }
         }
-        .contact-card:hover, .partner-card:hover {
-            border-color: var(--color-primary);
-            box-shadow: 0 6px 16px rgba(171, 98, 135, 0.25);
+
+        /* Gorgeous Quick Action Buttons */
+        .quick-actions {
+            position: fixed;
+            bottom: 100px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 999;
         }
-        .contact-card h3, .partner-card h3 { color: var(--color-primary); }
 
-        /* Buttons & Links */
-        .venue-link, .contact-card .venue-link { background: var(--color-primary); }
-        .venue-link:hover, .contact-card .venue-link:hover { background: var(--color-accent); }
-        .wishes-button { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
-        .whatsapp-float { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); box-shadow: 0 8px 25px rgba(226, 209, 208, 0.5); }
-        .whatsapp-float:hover { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%); box-shadow: 0 12px 35px rgba(226, 209, 208, 0.7); }
+        .quick-action-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            animation: float-in 0.6s ease backwards;
+            position: relative;
+            border: 3px solid white;
+        }
 
-        /* Tabs */
-        .tab-btn { border-color: var(--color-primary); color: var(--color-primary); }
-        .tab-btn.active { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+        @keyframes float-in {
+            0% { 
+                transform: translateX(100px) scale(0);
+                opacity: 0;
+            }
+            100% { 
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
 
-        /* Countdown */
-        .countdown-box { border-color: var(--color-primary); }
-        .countdown-number { color: var(--color-primary); }
+        .quick-action-btn::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
 
-        /* Utility bars */
-        .quick-info-bar { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
-        .scroll-progress { background: linear-gradient(90deg, var(--color-primary), var(--color-accent)); }
+        .quick-action-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+        }
 
-        /* Links in cards */
-        .contact-card a { color: var(--color-primary); }
-        .contact-card a:hover { color: var(--color-accent); }
+        .quick-action-btn:hover::before {
+            transform: scale(1.3);
+            opacity: 0.3;
+        }
+
+        .quick-action-btn:active {
+            transform: scale(0.95);
+        }
+
+        .quick-action-calendar {
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            animation-delay: 0s;
+        }
+
+        .quick-action-calendar:hover {
+            background: linear-gradient(135deg, #FFA500 0%, #FF8C00 100%);
+        }
+
+        .quick-action-location {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            animation-delay: 0.1s;
+        }
+
+        .quick-action-location:hover {
+            background: linear-gradient(135deg, #45a049 0%, #388E3C 100%);
+        }
+
+        .quick-action-share {
+            background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+            animation-delay: 0.2s;
+        }
+
+        .quick-action-share:hover {
+            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+        }
+
+        /* Tooltip for quick actions */
+        .quick-action-btn .tooltip {
+            position: absolute;
+            right: 70px;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 0.6rem 1rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .quick-action-btn .tooltip::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 6px solid rgba(0, 0, 0, 0.85);
+            border-top: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+        }
+
+        .quick-action-btn:hover .tooltip {
+            opacity: 1;
+            right: 75px;
+        }
+
+        /* Pulse animation for quick actions */
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.4);
+                opacity: 0;
+            }
+        }
+
+        .quick-action-btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 3px solid;
+            border-color: inherit;
+            animation: pulse-ring 2s infinite;
+            opacity: 0;
+        }
+
+        .quick-action-btn:hover::after {
+            animation: none;
+        }
+
+        /* Mobile adjustments for quick actions */
+        @media (max-width: 768px) {
+            .quick-actions {
+                bottom: 80px;
+                right: 15px;
+                gap: 0.8rem;
+            }
+
+            .quick-action-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+
+            .quick-action-btn .tooltip {
+                display: none;
+            }
+
+            .whatsapp-float {
+                width: 56px;
+                height: 56px;
+                bottom: 15px;
+                right: 15px;
+            }
+
+            .whatsapp-float svg {
+                width: 30px !important;
+                height: 30px !important;
+            }
+
+            .whatsapp-float .whatsapp-tooltip {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .quick-actions {
+                bottom: 70px;
+                right: 10px;
+            }
+
+            .quick-action-btn {
+                width: 46px;
+                height: 46px;
+                font-size: 1.3rem;
+            }
+
+            .whatsapp-float {
+                width: 52px;
+                height: 52px;
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+
+        /* Tab navigation for sections */
+        .tab-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 0.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+
+        .tab-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        .tab-btn {
+            flex: 0 0 auto;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 100%);
+            border: 2px solid #d8779b;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-family: 'Lato', sans-serif;
+            font-weight: 600;
+            color: #c85a85;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #d8779b 0%, #c85a85 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .tab-btn:active {
+            transform: scale(0.95);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pull to refresh indicator */
+        .pull-refresh {
+            position: fixed;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #d8779b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            transition: top 0.3s ease;
+            z-index: 9999;
+        }
+
+        .pull-refresh.active {
+            top: 20px;
+        }
+
+        /* Expandable event items */
+        .event-item {
+            cursor: pointer;
+        }
+
+        .event-item .event-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .event-item.expanded .event-details {
+            max-height: 500px;
+        }
+
+        .event-item::after {
+            content: '▼';
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            color: #d8779b;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .event-item.expanded::after {
+            transform: rotate(180deg);
+        }
+
+        /* Sticky quick info bar */
+        .quick-info-bar {
+            position: sticky;
+            top: 60px;
+            background: linear-gradient(135deg, #d8779b 0%, #c85a85 100%);
+            color: white;
+            padding: 0.8rem;
+            text-align: center;
+            z-index: 99;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Interactive emoji reactions */
+        .emoji-reactions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .emoji-btn {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+
+        .emoji-btn:hover, .emoji-btn.active {
+            filter: grayscale(0%);
+            transform: scale(1.3) rotate(10deg);
+        }
+
+        /* Loading skeleton */
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Haptic feedback simulation */
+        @keyframes haptic {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-2px); }
+            75% { transform: translateX(2px); }
+        }
+
+        .haptic {
+            animation: haptic 0.3s ease;
+        }
+
+        /* Modern Interactive Enhancements */
+        
+        /* Fade-in on scroll animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax header effect */
+        .header {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Floating animation for logo */
+        .wedding-logo {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Gradient text effect for names */
+        .header h1 {
+            background: linear-gradient(45deg, white, #ffe6f0, white);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Enhanced event cards with stagger animation */
+        .event-card {
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .event-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(216, 119, 155, 0.3);
+        }
+
+        /* Color dots animation */
+        .color-dot {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.5) rotate(180deg);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        /* Countdown timer styles */
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            background: linear-gradient(135deg, #fff5f8 0%, #ffe6f0 100%);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(216, 119, 155, 0.2);
+            border: 2px solid #d8779b;
+            min-width: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(216, 119, 155, 0.3);
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #c85a85;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.5rem;
+        }
+
+        /* Interactive nav with active state */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        nav a.active {
+            background: #d8779b;
+            color: white;
+        }
+
+        /* Sparkle effect on hover */
+        .sparkle {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sparkle::after {
+            content: '✨';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 2rem;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .sparkle:hover::after {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        /* Smooth accordion for event details */
+        .event-details {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        /* Loading animation for selected images only */
+        .fade-in-img {
+            opacity: 0;
+            animation: fadeInImage 0.8s ease-in forwards;
+        }
+
+        /* Ensure critical images never stay hidden if animations are reduced/blocked */
+        .wedding-logo {
+            opacity: 1 !important;
+            animation: none !important;
+        }
+
+        @keyframes fadeInImage {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Interactive hover for contact cards */
+        .contact-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Anchor offset so sticky nav doesn't cover section headings */
+        section { scroll-margin-top: 90px; }
+
+        /* Safe-area support for bottom-floating buttons (iOS notch/home) */
+        .quick-actions { bottom: calc(100px + env(safe-area-inset-bottom)); }
+        .whatsapp-float { bottom: calc(30px + env(safe-area-inset-bottom)); }
+
+        @media (max-width: 768px) {
+            .quick-actions { bottom: calc(80px + env(safe-area-inset-bottom)); }
+            .whatsapp-float { bottom: calc(15px + env(safe-area-inset-bottom)); }
+        }
+
+        @media (max-width: 480px) {
+            .quick-actions { bottom: calc(70px + env(safe-area-inset-bottom)); }
+            .whatsapp-float { bottom: calc(10px + env(safe-area-inset-bottom)); }
+        }
+
+        /* Mobile-first header tightening and tap target improvements */
+        @media (max-width: 768px) {
+            .header { padding: 1.2rem 0.9rem; }
+            nav a { min-height: 44px; display: inline-flex; align-items: center; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 1rem 0.8rem; }
+            nav a { min-height: 44px; padding: 0.45rem 0.7rem; }
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(216, 119, 155, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .contact-card:hover::before {
+            left: 100%;
+        }
+
+        /* Ripple effect for buttons */
+        .wishes-button, .venue-link, .whatsapp-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wishes-button::before, .venue-link::before, .whatsapp-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .wishes-button:hover::before, .venue-link:hover::before, .whatsapp-button:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Progress bar for page scroll */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(90deg, #d8779b, #c85a85);
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+
+        /* Enhanced Mobile Readability - CRITICAL OVERRIDES */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px !important;
+            }
+            .event-name {
+                font-size: 1.2rem !important;
+                font-weight: 600;
+            }
+            .event-time {
+                font-size: 1.05rem !important;
+            }
+            .event-details {
+                font-size: 1rem !important;
+                line-height: 1.7 !important;
+            }
+            .countdown-number {
+                font-size: 2.2rem !important;
+            }
+            .countdown-label {
+                font-size: 0.85rem !important;
+            }
+            h2 {
+                font-size: 2rem !important;
+            }
+            .tab-btn {
+                font-size: 0.95rem !important;
+                padding: 0.9rem 1.3rem !important;
+            }
+            .contact-card, .partner-card {
+                font-size: 1rem;
+            }
+            .contact-card h3 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 15px !important;
+            }
+            .event-name {
+                font-size: 1.15rem !important;
+            }
+            .event-time {
+                font-size: 1rem !important;
+            }
+            h2 {
+                font-size: 1.8rem !important;
+            }
+            .header h1 {
+                font-size: 1.9rem !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1780,71 +2642,47 @@
 
                     <div class="event-item expanded" onclick="toggleEvent(this)">
                         <div class="event-time">⏰ 12:00 PM Onwards</div>
-                        <div class="event-name">HALDI CARNIVAL + LUNCH</div>
+                        <div class="event-name">HALDI CEREMONY</div>
                         <div class="event-details">
-                            <div>📍 Miraj Pavilion, North End, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                            <div>🎨 Theme: <strong>High Street Fiesta - High Street Fashion</strong></div>
-                            <div>👗 Dress Code: Trendy pastels with chic cuts, fairy-tale twist</div>
+                            <div>📍 Hall of Mirrors, 1st Floor, Radisson Blu (Miraj Stadium), Nathdwara</div>
+                            <div>🎨 Theme: <strong>Royal Elegance</strong></div>
+                            <div>👗 Dress Code: Traditional attire in pastels and gold</div>
                             <div>🎨 Color Palette:
                                 <div class="theme-colors">
-                                    <span class="color-dot" style="background: pink;"></span>
-                                    <span class="color-dot" style="background: yellow;"></span>
-                                    <span class="color-dot" style="background: orange;"></span>
-                                    <span class="color-dot" style="background: purple;"></span>
-                                    <span class="color-dot" style="background: lightgreen;"></span>
+                                    <span class="color-dot" style="background: #FFDEAD;"></span>
+                                    <span class="color-dot" style="background: #FFE4B5;"></span>
+                                    <span class="color-dot" style="background: #FFF8DC;"></span>
+                                    <span class="color-dot" style="background: #FAEBD7;"></span>
+                                    <span class="color-dot" style="background: #FFEFD5;"></span>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="event-item" onclick="toggleEvent(this)">
-                        <div class="event-time">⏰ 6:30 PM</div>
-                        <div class="event-name">BARAAT ASSEMBLE & SEHRA BANDI</div>
-                        <div class="event-details">
-                            <div>📍 Lobby, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                        </div>
-                    </div>
-
-                    <div class="event-item" onclick="toggleEvent(this)">
-                        <div class="event-time">⏰ 7:00 PM</div>
-                        <div class="event-name">BARAAT PROCESSION</div>
-                        <div class="event-details">
-                            <div>📍 From Lobby, Radisson Blu (Miraj Stadium), Nathdwara</div>
                         </div>
                     </div>
 
                     <div class="event-item expanded" onclick="toggleEvent(this)">
-                        <div class="event-time">⏰ 8:01 PM Onwards</div>
-                        <div class="event-name">VARMALA & RECEPTION + DINNER</div>
+                        <div class="event-time">⏰ 5:00 PM Onwards</div>
+                        <div class="event-name">WEDDING CEREMONY</div>
                         <div class="event-details">
-                            <div>📍 Miraj Arena, North End, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                            <div>🎨 Theme: <strong>Rajwada Royal - The Sacred Vows</strong></div>
-                            <div>👗 Dress Code: Most royal look - rich colors & grand traditional wear</div>
+                            <div>📍 Main Wedding Lawn, Radisson Blu (Miraj Stadium), Nathdwara</div>
+                            <div>🎨 Theme: <strong>Enchanted Garden</strong></div>
+                            <div>👗 Dress Code: Formal attire with a touch of green</div>
                             <div>🎨 Color Palette:
                                 <div class="theme-colors">
-                                    <span class="color-dot" style="background: gold;"></span>
-                                    <span class="color-dot" style="background: red;"></span>
-                                    <span class="color-dot" style="background: #FFFDD0;"></span>
-                                    <span class="color-dot" style="background: #FF1493;"></span>
-                                    <span class="color-dot" style="background: maroon;"></span>
+                                    <span class="color-dot" style="background: #228B22;"></span>
+                                    <span class="color-dot" style="background: #32CD32;"></span>
+                                    <span class="color-dot" style="background: #90EE90;"></span>
+                                    <span class="color-dot" style="background: #98FB98;"></span>
+                                    <span class="color-dot" style="background: #00FF7F;"></span>
                                 </div>
                             </div>
-                            <div>💡 Dinner before sunset available at venue</div>
-                            <div>☕ 24×7 refreshments @ ADD, 3rd Floor</div>
-                        </div>
-                    </div>
-
-                    <div class="event-item" onclick="toggleEvent(this)">
-                        <div class="event-time">⏰ MIDNIGHT</div>
-                        <div class="event-name">PHERAS</div>
-                        <div class="event-details">
-                            <div>📍 Patio, South End, Radisson Blu (Miraj Stadium), Nathdwara</div>
+                            <div>💡 Outdoor ceremony, please dress accordingly</div>
+                            <div>🍽️ Reception dinner immediately follows</div>
                         </div>
                     </div>
 
                     <div class="emoji-reactions">
-                        <span class="emoji-btn" onclick="reactEmoji(this)">💒</span>
-                        <span class="emoji-btn" onclick="reactEmoji(this)">💍</span>
+                        <span class="emoji-btn" onclick="reactEmoji(this)">❤️</span>
+                        <span class="emoji-btn" onclick="reactEmoji(this)">🎊</span>
                         <span class="emoji-btn" onclick="reactEmoji(this)">👰</span>
                         <span class="emoji-btn" onclick="reactEmoji(this)">🤵</span>
                     </div>
@@ -1854,526 +2692,208 @@
                 <div class="event-card tab-content" data-day="2">
                     <div class="event-day">📅 Thursday, 27 November 2025</div>
                     
-                    <div class="event-item expanded" onclick="toggleEvent(this)">
-                        <div class="event-time">⏰ 8:00 AM Onwards</div>
-                        <div class="event-name">BREAKFAST</div>
+                    <div class="event-item" onclick="toggleEvent(this)">
+                        <div class="event-time">⏰ 9:00 AM - 11:00 AM</div>
+                        <div class="event-name">POST-WEDDING BRUNCH</div>
                         <div class="event-details">
                             <div>📍 All Day Dining (ADD), 3rd Floor, Radisson Blu</div>
-                            <div>☕ 24×7 refreshments available throughout celebrations @ ADD, 3rd Floor</div>
-                            <div style="margin-top: 1rem; font-style: italic; color: #d4558c;">💕 Thanks for celebrating with us!</div>
+                            <div>🥂 Join us for a celebratory brunch!</div>
+                        </div>
+                    </div>
+
+                    <div class="event-item" onclick="toggleEvent(this)">
+                        <div class="event-time">⏰ 11:30 AM - 1:00 PM</div>
+                        <div class="event-name">CHECK-OUT</div>
+                        <div class="event-details">
+                            <div>📍 Guest Rooms, Radisson Blu (Miraj Stadium), Nathdwara</div>
+                            <div>🔑 Please return room keys at the front desk</div>
                         </div>
                     </div>
 
                     <div class="emoji-reactions">
-                        <span class="emoji-btn" onclick="reactEmoji(this)">🙏</span>
-                        <span class="emoji-btn" onclick="reactEmoji(this)">💝</span>
-                        <span class="emoji-btn" onclick="reactEmoji(this)">🎊</span>
-                        <span class="emoji-btn" onclick="reactEmoji(this)">✨</span>
+                        <span class="emoji-btn" onclick="reactEmoji(this)">😊</span>
+                        <span class="emoji-btn" onclick="reactEmoji(this)">🥳</span>
+                        <span class="emoji-btn" onclick="reactEmoji(this)">💖</span>
                     </div>
                 </div>
             </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 16px; color: #666; margin-bottom: 0.5rem;">📍 Main Venue</p>
-                <a href="https://maps.app.goo.gl/RqeHB8XoS68tKZ7LA" target="_blank" class="venue-link">
-                    🗺️ Open in Maps
-                </a>
-            </div>
         </section>
 
-        <!-- Contact Info Section -->
+        <!-- Contact Section -->
         <section id="contact" class="fade-in">
             <h2>Contact Information</h2>
-            
+
             <div class="contact-grid">
                 <div class="contact-card">
-                    <h3>🏨 Radisson Blu</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:+917425086947">+91 74250 86947</a></p>
-                    <p><strong>Reception:</strong> Press 9</p>
-                    <p><strong>Housekeeping:</strong> Press 6</p>
-                    <a href="https://maps.app.goo.gl/RqeHB8XoS68tKZ7LA" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
+                    <h3>Deshna's Family</h3>
+                    <div>📞 +91 98765 43210</div>
+                    <div>📧 deshna.family@email.com</div>
+                    <a href="https://goo.gl/maps/example" class="venue-link" target="_blank">📍 Venue Location</a>
                 </div>
 
                 <div class="contact-card">
-                    <h3>🏨 Shahi Hotel</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:7073772203">7073772203</a></p>
-                    <p><strong>Reception/Housekeeping:</strong> Press 9</p>
-                    <a href="https://maps.app.goo.gl/t83RnobNs4wiwJtH6" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
+                    <h3>Mehul's Family</h3>
+                    <div>📞 +91 87654 32109</div>
+                    <div>📧 mehuls.family@email.com</div>
+                    <a href="https://goo.gl/maps/example" class="venue-link" target="_blank">📍 Venue Location</a>
                 </div>
 
                 <div class="contact-card">
-                    <h3>🏨 Hotel Gopal Darshan</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:7737923212">7737923212</a></p>
-                    <p><strong>Reception/Housekeeping:</strong> Press 9</p>
-                    <a href="https://maps.app.goo.gl/PedjgcA7Eia7v5SZ7" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
-                </div>
-
-                <div class="contact-card">
-                    <h3>🏨 Sshubh Hotel</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:7726924686">7726924686</a></p>
-                    <p><strong>Reception/Housekeeping:</strong> Press 9</p>
-                    <a href="https://maps.app.goo.gl/sm4Xjy9UEdufe6jp9" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
+                    <h3>Wedding Planner</h3>
+                    <div>📞 +91 99876 54321</div>
+                    <div>📧 planner@email.com</div>
+                    <a href="https://goo.gl/maps/example" class="venue-link" target="_blank">📍 Office Location</a>
                 </div>
             </div>
         </section>
 
-        <!-- Wishes Section -->
+        <!-- Send Wishes Section -->
         <section id="wishes" class="fade-in">
             <h2>Send Your Wishes</h2>
+
             <div class="wishes-form">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
-                    Share your blessings and wishes for the happy couple! Your messages will be compiled into a special keepsake.
-                </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx8DaeYRaVfbhN6YY4rhOCz8PszjdJ2eoIInD9EqA1u8KtcA/viewform" 
-                   target="_blank" 
-                   class="wishes-button">
-                    💌 Send Your Wishes
-                </a>
+                <textarea id="wishesInput" rows="4" placeholder="Type your wishes here..." style="width: 100%; padding: 1rem; border-radius: 10px; border: 2px solid #d8779b;"></textarea>
+                <div style="margin-top: 1rem;">
+                    <a href="javascript:void(0)" class="wishes-button" onclick="submitWishes()">Send Wishes 💌</a>
+                </div>
             </div>
         </section>
 
-        <!-- Partners Section -->
+        <!-- Our Partners Section -->
         <section id="partners" class="fade-in">
             <h2>Our Partners</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 16px;">
-                Special thanks to our amazing partners who made this celebration possible
-            </p>
-            
+
             <div class="partners-grid">
                 <div class="partner-card">
-                    <h3>🏨 Venue Partner</h3>
-                    <p><strong>Radisson Blu</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Miraj Stadium, Nathdwara</p>
+                    <h3>Venue</h3>
+                    <img src="partner-venue.jpeg" alt="Venue" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                    <div>Radisson Blu (Miraj Stadium), Nathdwara</div>
+                    <a href="https://www.radissonhotels.com/en-us/hotels/radisson-blu-nathdwara" class="venue-link" target="_blank">View Venue Website</a>
                 </div>
 
                 <div class="partner-card">
-                    <h3>🎭 Event Management</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Planning & Coordination</p>
+                    <h3>Catering</h3>
+                    <img src="partner-catering.jpeg" alt="Catering" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                    <div>Royal Caterers</div>
+                    <a href="https://www.royalcaterers.com" class="venue-link" target="_blank">View Catering Website</a>
                 </div>
 
                 <div class="partner-card">
-                    <h3>📸 Photography</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Capturing Memories</p>
+                    <h3>Photography</h3>
+                    <img src="partner-photography.jpeg" alt="Photography" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                    <div>Shutterbugs Photography</div>
+                    <a href="https://www.shutterbugs.com" class="venue-link" target="_blank">View Photography Website</a>
                 </div>
 
                 <div class="partner-card">
-                    <h3>🍽️ Catering</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Culinary Excellence</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>💐 Decor</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Creating Magic</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>🎵 Entertainment</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Music & Performances</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>📇 Wedding Stationery & Collaterals</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Invitations, Cards & Print Materials</p>
+                    <h3>Decor</h3>
+                    <img src="partner-decor.jpeg" alt="Decor" style="width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+                    <div>Elegant Events</div>
+                    <a href="https://www.elegantevents.com" class="venue-link" target="_blank">View Decor Website</a>
                 </div>
             </div>
         </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <h3>Thank You for Celebrating with Us!</h3>
+            <p>We are grateful for your love and support. Let's make unforgettable memories together!</p>
+            <div class="footer-heart">❤️</div>
+        </footer>
     </div>
 
-    <footer>
-        <div class="footer-heart">💑</div>
-        <h3>#OfficiallyMaD</h3>
-        <p style="margin-top: 1rem;">Deshna & Mehul's Wedding</p>
-        <p>25-27 November 2025 • Nathdwara</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2025 All Rights Reserved</p>
-    </footer>
-
-    <!-- Quick Action Buttons -->
-    <div class="quick-actions">
-        <div class="quick-action-btn quick-action-calendar" onclick="addToCalendar()">
-                       📅
-            <span class="tooltip">Add to Calendar</span>
-        </div>
-        <div class="quick-action-btn quick-action-location" onclick="openMaps()">
-            📍
-            <span class="tooltip">Get Directions</span>
-        </div>
-        <div class="quick-action-btn quick-action-share" onclick="shareWebsite()">
-            🔗
-            <span class="tooltip">Share Wedding</span>
-        </div>
-    </div>
-
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/15558433426?text=Hello" target="_blank" class="whatsapp-float">
-        <svg style="position: relative; z-index: 1; width: 38px; height: 38px;" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" id="whatsappButton" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp">
+            <path d="M21.54 2.46a10 10 0 0 0-14.08 0l-1.42 1.42a10 10 0 0 0 0 14.08l1.42 1.42a10 10 0 0 0 14.08 0l1.42-1.42a10 10 0 0 0 0-14.08z"></path>
+            <path d="M15.87 8.63a4.25 4.25 0 0 0-6.74 5.24l-.8.8a8.93 8.93 0 0 1-2.12-1.83l.8-.8a4.25 4.25 0 0 0 5.24-6.74z"></path>
+            <path d="M17.66 6.34a8.93 8.93 0 0 1 0 11.32l-1.41-1.41a6.34 6.34 0 0 0 0-8.49z"></path>
         </svg>
         <div class="whatsapp-tooltip">
-            <div class="tooltip-title">Talk to MaD</div>
-            <div class="tooltip-subtitle">Our Wedding Chatbot</div>
-            <div class="tooltip-powered">Powered by EACC Events</div>
+            <div class="tooltip-title">Chat with Us!</div>
+            <div class="tooltip-subtitle">We're here to help you.</div>
+            <div class="tooltip-powered">Powered by WhatsApp</div>
         </div>
     </a>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-
-        // Countdown Timer with dynamic quick info
-        function updateCountdown() {
-            const weddingDate = new Date('November 25, 2025 10:30:00').getTime();
+        // Countdown Timer
+        const countdown = () => {
+            const endDate = new Date("2025-11-25T08:00:00Z").getTime();
             const now = new Date().getTime();
-            const distance = weddingDate - now;
+            const diff = endDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            document.getElementById("days").innerText = String(days).padStart(2, '0');
+            document.getElementById("hours").innerText = String(hours).padStart(2, '0');
+            document.getElementById("minutes").innerText = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").innerText = String(seconds).padStart(2, '0');
 
             // Update quick info bar
-            document.getElementById('quickInfo').textContent = `📅 ${days} Days to Go! • 📍 Nathdwara • 💕 #OfficiallyMaD`;
-
-            if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<h2 style="color: #c85a85; font-size: 2rem;">🎉 The Wedding is Here! 🎉</h2>';
-                document.getElementById('quickInfo').textContent = '🎉 Wedding Day! • 📍 Nathdwara • 💕 #OfficiallyMaD';
-            }
+            document.getElementById("quickInfo").innerText = `📅 ${days} Days to Go! • 📍 Nathdwara • 💕 #OfficiallyMaD`;
         }
 
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
+        setInterval(countdown, 1000);
+
+        // Switch Day in Itinerary
+        const switchDay = (index) => {
+            const tabs = document.querySelectorAll(".tab-btn");
+            const contents = document.querySelectorAll(".tab-content");
+
+            tabs.forEach((tab, i) => {
+                if (i === index) {
+                    tab.classList.add("active");
+                } else {
+                    tab.classList.remove("active");
+                }
+            });
+
+            contents.forEach((content, i) => {
+                if (i === index) {
+                    content.classList.add("active");
+                } else {
+                    content.classList.remove("active");
+                }
+            });
+        }
+
+        // Toggle Event Details
+        const toggleEvent = (element) => {
+            element.classList.toggle("expanded");
+        }
+
+        // React with Emoji
+        const reactEmoji = (element) => {
+            const emoji = element.innerText;
+            alert(`You reacted with ${emoji}`);
+        }
+
+        // Submit Wishes
+        const submitWishes = () => {
+            const wishes = document.getElementById("wishesInput").value;
+            if (wishes) {
+                alert(`Your wishes have been sent: "${wishes}"`);
+                document.getElementById("wishesInput").value = '';
+            } else {
+                alert("Please enter your wishes before sending.");
+            }
+        }
 
         // Scroll Progress Bar
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.getElementById('scrollProgress');
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrollPercentage = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.width = scrollPercentage + '%';
-        });
+        const scrollProgress = () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollProgress").style.width = scrolled + "%";
+        }
 
-        // Fade-in animation on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const appearOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
+        window.onscroll = () => {
+            scrollProgress();
         };
-
-        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) {
-                    return;
-                } else {
-                    entry.target.classList.add('visible');
-                    appearOnScroll.unobserve(entry.target);
-                }
-            });
-        }, appearOptions);
-
-        fadeElements.forEach(element => {
-            appearOnScroll.observe(element);
-        });
-
-        // Tab switching for days
-        function switchDay(dayIndex) {
-            const tabs = document.querySelectorAll('.tab-btn');
-            const contents = document.querySelectorAll('.tab-content');
-            const carousel = document.getElementById('daysCarousel');
-            
-            tabs.forEach((tab, index) => {
-                tab.classList.toggle('active', index === dayIndex);
-                tab.classList.add('haptic');
-                setTimeout(() => tab.classList.remove('haptic'), 300);
-            });
-            
-            contents.forEach((content, index) => {
-                content.classList.toggle('active', index === dayIndex);
-            });
-
-            // Smooth scroll to selected day in carousel
-            const targetCard = contents[dayIndex];
-            if (targetCard && carousel) {
-                targetCard.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-            }
-        }
-
-        // Toggle event details (accordion)
-        function toggleEvent(element) {
-            element.classList.toggle('expanded');
-            element.classList.add('haptic');
-            setTimeout(() => element.classList.remove('haptic'), 300);
-        }
-
-        // Emoji reactions
-        function reactEmoji(element) {
-            element.classList.toggle('active');
-            element.classList.add('haptic');
-            setTimeout(() => element.classList.remove('haptic'), 300);
-            
-            // Create floating animation
-            const clone = element.cloneNode(true);
-            clone.style.position = 'fixed';
-            clone.style.left = element.getBoundingClientRect().left + 'px';
-            clone.style.top = element.getBoundingClientRect().top + 'px';
-            clone.style.zIndex = '10000';
-            clone.style.pointerEvents = 'none';
-            clone.style.transition = 'all 1s ease-out';
-            document.body.appendChild(clone);
-            
-            setTimeout(() => {
-                clone.style.transform = 'translateY(-100px) scale(2)';
-                clone.style.opacity = '0';
-            }, 10);
-            
-            setTimeout(() => clone.remove(), 1000);
-        }
-
-        // Add to Calendar with visual feedback
-        function addToCalendar() {
-            const btn = document.querySelector('.quick-action-calendar');
-            btn.classList.add('haptic');
-            
-            const startDate = '20251125T103000';
-            const endDate = '20251127T120000';
-            const title = 'Deshna & Mehul Wedding - OfficiallyMaD';
-            const location = 'Radisson Blu (Miraj Stadium), Nathdwara';
-            const details = 'Join us for a 3-day celebration! Check officiallymad.fun for full schedule.';
-            
-            const googleCalUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
-            
-            // Show success animation
-            showSuccessAnimation(btn, '✓');
-            
-            setTimeout(() => {
-                window.open(googleCalUrl, '_blank');
-                btn.classList.remove('haptic');
-            }, 300);
-        }
-
-        // Open Maps with animation
-        function openMaps() {
-            const btn = document.querySelector('.quick-action-location');
-            btn.classList.add('haptic');
-            
-            showSuccessAnimation(btn, '📍');
-            
-            setTimeout(() => {
-                window.open('https://maps.app.goo.gl/RqeHB8XoS68tKZ7LA', '_blank');
-                btn.classList.remove('haptic');
-            }, 300);
-        }
-
-        // Share Website with native share or fallback
-        async function shareWebsite() {
-            const btn = document.querySelector('.quick-action-share');
-            btn.classList.add('haptic');
-            
-            const shareData = {
-                title: '#OfficiallyMaD - Deshna & Mehul Wedding',
-                text: 'Join us for our wedding celebration! Nov 25-27, 2025 in Nathdwara 💕',
-                url: 'https://officiallymad.fun'
-            };
-            
-            try {
-                if (navigator.share) {
-                    await navigator.share(shareData);
-                    showSuccessAnimation(btn, '✓');
-                } else {
-                    // Fallback: copy to clipboard
-                    await navigator.clipboard.writeText('https://officiallymad.fun');
-                    showNotification('Link copied to clipboard! 📋', 'success');
-                    showSuccessAnimation(btn, '✓');
-                }
-            } catch (err) {
-                if (err.name !== 'AbortError') {
-                    showNotification('Unable to share. Please copy the link manually.', 'error');
-                }
-            }
-            
-            setTimeout(() => btn.classList.remove('haptic'), 300);
-        }
-
-        // Success animation helper
-        function showSuccessAnimation(element, icon) {
-            const originalContent = element.innerHTML;
-            element.innerHTML = icon;
-            element.style.transform = 'scale(1.3) rotate(360deg)';
-            
-            setTimeout(() => {
-                element.innerHTML = originalContent;
-                element.style.transform = '';
-            }, 1000);
-        }
-
-        // Toast notification system
-        function showNotification(message, type = 'info') {
-            const toast = document.createElement('div');
-            toast.textContent = message;
-            toast.style.cssText = `
-                position: fixed;
-                top: 80px;
-                left: 50%;
-                transform: translateX(-50%) translateY(-100px);
-                background: ${type === 'success' ? 'linear-gradient(135deg, #4CAF50, #45a049)' : 
-                              type === 'error' ? 'linear-gradient(135deg, #f44336, #d32f2f)' : 
-                              'linear-gradient(135deg, #d8779b, #c85a85)'};
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 50px;
-                box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-                z-index: 10000;
-                font-family: 'Lato', sans-serif;
-                font-weight: 600;
-                font-size: 0.95rem;
-                transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            `;
-            
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.style.transform = 'translateX(-50%) translateY(0)';
-            }, 10);
-            
-            setTimeout(() => {
-                toast.style.transform = 'translateX(-50%) translateY(-100px)';
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
-        }
-
-        // Active navigation state
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('nav a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Swipe detection for carousel
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        const carousel = document.getElementById('daysCarousel');
-        if (carousel) {
-            carousel.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-            
-            carousel.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-        }
-        
-        function handleSwipe() {
-            const currentTab = document.querySelector('.tab-btn.active');
-            const tabIndex = Array.from(document.querySelectorAll('.tab-btn')).indexOf(currentTab);
-            
-            if (touchEndX < touchStartX - 50 && tabIndex < 2) {
-                // Swipe left - next day
-                switchDay(tabIndex + 1);
-            }
-            
-            if (touchEndX > touchStartX + 50 && tabIndex > 0) {
-                // Swipe right - previous day
-                switchDay(tabIndex - 1);
-            }
-        }
-
-        // Mobile menu toggle (if needed)
-        let lastScrollTop = 0;
-        const nav = document.querySelector('nav');
-        const quickInfoBar = document.querySelector('.quick-info-bar');
-        
-        window.addEventListener('scroll', () => {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down - hide nav on mobile
-                if (window.innerWidth <= 768) {
-                    nav.style.transform = 'translateY(-100%)';
-                    quickInfoBar.style.transform = 'translateY(-100%)';
-                }
-            } else {
-                // Scrolling up - show nav
-                nav.style.transform = 'translateY(0)';
-                quickInfoBar.style.transform = 'translateY(0)';
-            }
-            
-            lastScrollTop = scrollTop;
-        });
-
-        // Add transitions to nav
-        if (nav) {
-            nav.style.transition = 'transform 0.3s ease';
-            quickInfoBar.style.transition = 'transform 0.3s ease';
-        }
-
-        // Animate quick action buttons on load
-        setTimeout(() => {
-            document.querySelectorAll('.quick-action-btn').forEach((btn, index) => {
-                setTimeout(() => {
-                    btn.style.opacity = '1';
-                    btn.style.transform = 'scale(1)';
-                }, index * 100);
-            });
-        }, 1000);
-
-        // Set initial state for quick actions
-        document.querySelectorAll('.quick-action-btn').forEach(btn => {
-            btn.style.opacity = '0';
-            btn.style.transform = 'scale(0)';
-        });
-
-        // Prevent zoom on double tap (iOS)
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', event => {
-            const now = Date.now();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-
-        // Service Worker for offline support (optional)
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Uncomment to enable offline support
-                // navigator.serviceWorker.register('/sw.js');
-            });
-        }
     </script>
 </body>
 </html>
