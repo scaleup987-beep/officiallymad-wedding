@@ -1372,10 +1372,10 @@
             transition: max-height 0.5s ease;
         }
 
-        /* Loading animation for images */
-        img {
+        /* Loading animation for selected images only */
+        .fade-in-img {
             opacity: 0;
-            animation: fadeInImage 1s ease-in forwards;
+            animation: fadeInImage 0.8s ease-in forwards;
         }
 
         /* Ensure critical images never stay hidden if animations are reduced/blocked */
@@ -1394,6 +1394,34 @@
         .contact-card {
             position: relative;
             overflow: hidden;
+        }
+
+        /* Anchor offset so sticky nav doesn't cover section headings */
+        section { scroll-margin-top: 90px; }
+
+        /* Safe-area support for bottom-floating buttons (iOS notch/home) */
+        .quick-actions { bottom: calc(100px + env(safe-area-inset-bottom)); }
+        .whatsapp-float { bottom: calc(30px + env(safe-area-inset-bottom)); }
+
+        @media (max-width: 768px) {
+            .quick-actions { bottom: calc(80px + env(safe-area-inset-bottom)); }
+            .whatsapp-float { bottom: calc(15px + env(safe-area-inset-bottom)); }
+        }
+
+        @media (max-width: 480px) {
+            .quick-actions { bottom: calc(70px + env(safe-area-inset-bottom)); }
+            .whatsapp-float { bottom: calc(10px + env(safe-area-inset-bottom)); }
+        }
+
+        /* Mobile-first header tightening and tap target improvements */
+        @media (max-width: 768px) {
+            .header { padding: 1.2rem 0.9rem; }
+            nav a { min-height: 44px; display: inline-flex; align-items: center; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 1rem 0.8rem; }
+            nav a { min-height: 44px; padding: 0.45rem 0.7rem; }
         }
 
         .contact-card::before {
