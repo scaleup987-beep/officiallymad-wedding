@@ -1,788 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#OfficiallyMaD - Deshna & Mehul's Wedding</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background: #f8f3ed;
-            color: #333;
-            line-height: 1.8;
-            font-size: 0.95rem;
-            font-weight: 400;
-        }
-
-        .header {
-            background: linear-gradient(135deg, #d8779b 0%, #c85a85 100%);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '🌸';
-            position: absolute;
-            font-size: 8rem;
-            opacity: 0.1;
-            left: 5%;
-            top: 50%;
-            transform: translateY(-50%) rotate(-20deg);
-        }
-
-        .header::after {
-            content: '🌺';
-            position: absolute;
-            font-size: 8rem;
-            opacity: 0.1;
-            right: 5%;
-            top: 50%;
-            transform: translateY(-50%) rotate(20deg);
-        }
-
-        .logo-container {
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .wedding-logo {
-            max-width: 100%;
-            width: 500px;
-            height: auto;
-            max-height: 400px;
-            object-fit: contain;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .header-banner {
-            width: 100%;
-            max-width: 100%;
-            height: 200px;
-            object-fit: cover;
-            margin-bottom: 1rem;
-            border-radius: 10px;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            font-family: 'Playfair Display', serif;
-            position: relative;
-            z-index: 1;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-        }
-
-        .header .hashtag {
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            color: #d4a574;
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            position: relative;
-            z-index: 1;
-            letter-spacing: 0.05em;
-        }
-
-        .header .dates {
-            font-size: 1.1rem;
-            margin-top: 1rem;
-            position: relative;
-            z-index: 1;
-            font-family: 'Lato', sans-serif;
-            font-weight: 400;
-        }
-
-        nav {
-            background: white;
-            padding: 1rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            sticky: top;
-            top: 0;
-            z-index: 100;
-            border-bottom: 3px solid #d8779b;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #c85a85;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: all 0.3s;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-        }
-
-        nav a:hover {
-            color: white;
-            background: #d8779b;
-            transform: translateY(-2px);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        section {
-            background: white;
-            margin: 2rem 0;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(216, 119, 155, 0.15);
-            border: 1px solid #f5e6e8;
-        }
-
-        h2 {
-            color: #c85a85;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            border-bottom: 3px solid #d8779b;
-            padding-bottom: 1rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: 0.05em;
-        }
-
-        .event-card {
-            background: linear-gradient(135deg, #fff5f8 0%, #fff 100%);
-            border-left: 5px solid #d8779b;
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px rgba(216, 119, 155, 0.1);
-            position: relative;
-        }
-
-        .event-card::before {
-            content: '🌺';
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 3rem;
-            opacity: 0.1;
-        }
-
-        .event-day {
-            color: #c85a85;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .event-item {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: white;
-            border-radius: 12px;
-            border: 2px solid #ffe6f0;
-            transition: all 0.3s;
-        }
-
-        .event-item:hover {
-            border-color: #d8779b;
-            box-shadow: 0 4px 12px rgba(216, 119, 155, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .event-time {
-            color: #d8779b;
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .event-name {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.02em;
-        }
-
-        .event-details {
-            margin-left: 1rem;
-            color: #666;
-        }
-
-        .event-details div {
-            margin: 0.3rem 0;
-        }
-
-        .icon {
-            margin-right: 0.5rem;
-        }
-
-        .theme-colors {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .color-dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: inline-block;
-            border: 2px solid white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .contact-card {
-            background: linear-gradient(135deg, #fff5f8 0%, #fff 100%);
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(216, 119, 155, 0.15);
-            border: 2px solid #ffe6f0;
-            transition: all 0.3s;
-        }
-
-        .contact-card:hover {
-            border-color: #d8779b;
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(216, 119, 155, 0.25);
-        }
-
-        .contact-card h3 {
-            color: #c85a85;
-            margin-bottom: 1rem;
-        }
-
-        .contact-card a {
-            color: #d8779b;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-card a:hover {
-            color: #c85a85;
-        }
-
-        .contact-card .venue-link {
-            display: inline-block;
-            background: #d8779b;
-            color: white !important;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(216, 119, 155, 0.3);
-            font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .contact-card .venue-link:hover {
-            background: #c85a85;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(216, 119, 155, 0.4);
-            color: white !important;
-        }
-
-        .wishes-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            text-align: center;
-        }
-
-        .wishes-button {
-            background: linear-gradient(135deg, #d8779b 0%, #c85a85 100%);
-            color: white;
-            padding: 1rem 3rem;
-            font-size: 1.2rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(216, 119, 155, 0.4);
-        }
-
-        .wishes-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(216, 119, 155, 0.5);
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .partner-card {
-            background: linear-gradient(135deg, #fff5f8 0%, #fff 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            border: 2px solid #ffe6f0;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .partner-card::before {
-            content: '✨';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 1.5rem;
-            opacity: 0.3;
-        }
-
-        .partner-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(216, 119, 155, 0.25);
-            border-color: #d8779b;
-        }
-
-        .partner-card h3 {
-            color: #c85a85;
-            margin-bottom: 0.5rem;
-        }
-
-        .venue-link {
-            display: inline-block;
-            background: #d8779b;
-            color: white !important;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            margin-top: 1rem;
-            transition: all 0.3s;
-            box-shadow: 0 2px 8px rgba(216, 119, 155, 0.3);
-            font-family: 'Lato', sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .venue-link:hover {
-            background: #c85a85;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(216, 119, 155, 0.4);
-        }
-
-        footer {
-            background: linear-gradient(135deg, #c85a85 0%, #d8779b 100%);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-            position: relative;
-        }
-
-        footer h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            font-style: italic;
-        }
-
-        footer p {
-            font-family: 'Lato', sans-serif;
-            font-weight: 400;
-        }
-
-        footer::before {
-            content: '🌸';
-            position: absolute;
-            left: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 3rem;
-            opacity: 0.2;
-        }
-
-        footer::after {
-            content: '🌸';
-            position: absolute;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 3rem;
-            opacity: 0.2;
-        }
-
-        .footer-heart {
-            font-size: 2rem;
-            margin: 1rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2rem;
-            }
-
-            .wedding-logo {
-                width: 100%;
-                max-width: 350px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header class="header">
-        <div class="logo-container">
-            <img src="wedding-logo.jpeg" alt="Deshna & Mehul Wedding Logo" class="wedding-logo">
-        </div>
-        <h1>DESHNA & MEHUL</h1>
-        <div class="hashtag">#OfficiallyMaD</div>
-        <div class="dates">📅 25-27 November 2025</div>
-        <div class="dates">📍 Radisson Blu (Miraj Stadium), Nathdwara</div>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#itinerary">📋 Itinerary</a></li>
-            <li><a href="#contact">📞 Contact Info</a></li>
-            <li><a href="#wishes">💌 Send Wishes</a></li>
-            <li><a href="#partners">🤝 Our Partners</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- Itinerary Section -->
-        <section id="itinerary">
-            <h2>Wedding Itinerary</h2>
-
-            <!-- Day 1 -->
-            <div class="event-card">
-                <div class="event-day">📅 Tuesday, 25 November 2025</div>
-                
-                <div class="event-item">
-                    <div class="event-time">⏰ 8:00 AM Onwards</div>
-                    <div class="event-name">BREAKFAST</div>
-                    <div class="event-details">
-                        <div>📍 All Day Dining (ADD), 3rd Floor, Radisson Blu</div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 10:30 AM Onwards</div>
-                    <div class="event-name">MAYRA (Bride Side)</div>
-                    <div class="event-details">
-                        <div>📍 Banquet Hall, 4th Floor, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 12:30 PM Onwards</div>
-                    <div class="event-name">MEHENDI + LUNCH</div>
-                    <div class="event-details">
-                        <div>📍 Banquet Hall, 4th Floor, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                        <div>🎨 Theme: <strong>Boho Banjara</strong></div>
-                        <div>👗 Dress Code: Burst of color, playful layers, boho accessories</div>
-                        <div>🎨 Color Palette:
-                            <div class="theme-colors">
-                                <span class="color-dot" style="background: green;"></span>
-                                <span class="color-dot" style="background: yellow;"></span>
-                                <span class="color-dot" style="background: red;"></span>
-                                <span class="color-dot" style="background: orange;"></span>
-                                <span class="color-dot" style="background: blue;"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 7:00 PM Onwards</div>
-                    <div class="event-name">SANGEET + DINNER</div>
-                    <div class="event-details">
-                        <div>📍 Miraj Arena, North End, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                        <div>🎨 Theme: <strong>Glitz & Glam - Celestial Rhythms</strong></div>
-                        <div>👗 Dress Code: Sparkle & shine in blues and metallics</div>
-                        <div>🎨 Color Palette:
-                            <div class="theme-colors">
-                                <span class="color-dot" style="background: black;"></span>
-                                <span class="color-dot" style="background: #000080;"></span>
-                                <span class="color-dot" style="background: #00008B;"></span>
-                                <span class="color-dot" style="background: silver;"></span>
-                                <span class="color-dot" style="background: #4169E1;"></span>
-                            </div>
-                        </div>
-                        <div>💡 Dinner before sunset available at venue</div>
-                        <div>☕ 24×7 refreshments @ ADD, 3rd Floor</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 2 -->
-            <div class="event-card">
-                <div class="event-day">📅 Wednesday, 26 November 2025</div>
-                
-                <div class="event-item">
-                    <div class="event-time">⏰ 8:00 AM Onwards</div>
-                    <div class="event-name">BREAKFAST</div>
-                    <div class="event-details">
-                        <div>📍 All Day Dining (ADD), 3rd Floor, Radisson Blu</div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 12:00 PM Onwards</div>
-                    <div class="event-name">HALDI CARNIVAL + LUNCH</div>
-                    <div class="event-details">
-                        <div>📍 Miraj Pavilion, North End, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                        <div>🎨 Theme: <strong>High Street Fiesta - High Street Fashion</strong></div>
-                        <div>👗 Dress Code: Trendy pastels with chic cuts, fairy-tale twist</div>
-                        <div>🎨 Color Palette:
-                            <div class="theme-colors">
-                                <span class="color-dot" style="background: pink;"></span>
-                                <span class="color-dot" style="background: yellow;"></span>
-                                <span class="color-dot" style="background: orange;"></span>
-                                <span class="color-dot" style="background: purple;"></span>
-                                <span class="color-dot" style="background: lightgreen;"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 6:30 PM</div>
-                    <div class="event-name">BARAAT ASSEMBLE & SEHRA BANDI</div>
-                    <div class="event-details">
-                        <div>📍 Lobby, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 7:00 PM</div>
-                    <div class="event-name">BARAAT PROCESSION</div>
-                    <div class="event-details">
-                        <div>📍 From Lobby, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ 8:01 PM Onwards</div>
-                    <div class="event-name">VARMALA & RECEPTION + DINNER</div>
-                    <div class="event-details">
-                        <div>📍 Miraj Arena, North End, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                        <div>🎨 Theme: <strong>Rajwada Royal - The Sacred Vows</strong></div>
-                        <div>👗 Dress Code: Most royal look - rich colors & grand traditional wear</div>
-                        <div>🎨 Color Palette:
-                            <div class="theme-colors">
-                                <span class="color-dot" style="background: gold;"></span>
-                                <span class="color-dot" style="background: red;"></span>
-                                <span class="color-dot" style="background: #FFFDD0;"></span>
-                                <span class="color-dot" style="background: #FF1493;"></span>
-                                <span class="color-dot" style="background: maroon;"></span>
-                            </div>
-                        </div>
-                        <div>💡 Dinner before sunset available at venue</div>
-                        <div>☕ 24×7 refreshments @ ADD, 3rd Floor</div>
-                    </div>
-                </div>
-
-                <div class="event-item">
-                    <div class="event-time">⏰ MIDNIGHT</div>
-                    <div class="event-name">PHERAS</div>
-                    <div class="event-details">
-                        <div>📍 Patio, South End, Radisson Blu (Miraj Stadium), Nathdwara</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Day 3 -->
-            <div class="event-card">
-                <div class="event-day">📅 Thursday, 27 November 2025</div>
-                
-                <div class="event-item">
-                    <div class="event-time">⏰ 8:00 AM Onwards</div>
-                    <div class="event-name">BREAKFAST</div>
-                    <div class="event-details">
-                        <div>📍 All Day Dining (ADD), 3rd Floor, Radisson Blu</div>
-                        <div>☕ 24×7 refreshments available throughout celebrations @ ADD, 3rd Floor</div>
-                        <div style="margin-top: 1rem; font-style: italic; color: #d4558c;">💕 Thanks for celebrating with us!</div>
-                    </div>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <p style="font-size: 1.1rem; color: #666; margin-bottom: 0.5rem;">📍 Main Venue</p>
-                <a href="https://maps.app.goo.gl/RqeHB8XoS68tKZ7LA" target="_blank" class="venue-link">
-                    🗺️ Open in Maps
-                </a>
-            </div>
-        </section>
-
-        <!-- Contact Info Section -->
-        <section id="contact">
-            <h2>Contact Information</h2>
-            
-            <div class="contact-grid">
-                <div class="contact-card">
-                    <h3>🏨 Radisson Blu</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:+917425086947">+91 74250 86947</a></p>
-                    <p><strong>Reception:</strong> Press 9</p>
-                    <p><strong>Housekeeping:</strong> Press 6</p>
-                    <a href="https://maps.app.goo.gl/RqeHB8XoS68tKZ7LA" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
-                </div>
-
-                <div class="contact-card">
-                    <h3>🏨 Shahi Hotel</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:7073772203">7073772203</a></p>
-                    <p><strong>Reception/Housekeeping:</strong> Press 9</p>
-                    <a href="https://maps.app.goo.gl/t83RnobNs4wiwJtH6" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
-                </div>
-
-                <div class="contact-card">
-                    <h3>🏨 Hotel Gopal Darshan</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:7737923212">7737923212</a></p>
-                    <p><strong>Reception/Housekeeping:</strong> Press 9</p>
-                    <a href="https://maps.app.goo.gl/PedjgcA7Eia7v5SZ7" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
-                </div>
-
-                <div class="contact-card">
-                    <h3>🏨 Sshubh Hotel</h3>
-                    <p><strong>📞 Phone:</strong> <a href="tel:7726924686">7726924686</a></p>
-                    <p><strong>Reception/Housekeeping:</strong> Press 9</p>
-                    <a href="https://maps.app.goo.gl/sm4Xjy9UEdufe6jp9" target="_blank" class="venue-link" style="display: inline-block; margin-top: 0.5rem; font-size: 0.9rem; padding: 0.4rem 1rem;">Open in Maps</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Wishes Section -->
-        <section id="wishes">
-            <h2>Send Your Wishes</h2>
-            <div class="wishes-form">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #666;">
-                    Share your blessings and wishes for the happy couple! Your messages will be compiled into a special keepsake.
-                </p>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdx8DaeYRaVfbhN6YY4rhOCz8PszjdJ2eoIInD9EqA1u8KtcA/viewform" 
-                   target="_blank" 
-                   class="wishes-button">
-                    💌 Send Your Wishes
-                </a>
-            </div>
-        </section>
-
-        <!-- Partners Section -->
-        <section id="partners">
-            <h2>Our Partners</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem; font-size: 1.1rem;">
-                Special thanks to our amazing partners who made this celebration possible
-            </p>
-            
-            <div class="partners-grid">
-                <div class="partner-card">
-                    <h3>🏨 Venue Partner</h3>
-                    <p><strong>Radisson Blu</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Miraj Stadium, Nathdwara</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>🎭 Event Management</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Planning & Coordination</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>📸 Photography</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Capturing Memories</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>🍽️ Catering</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Culinary Excellence</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>💐 Decor</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Creating Magic</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>🎵 Entertainment</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Music & Performances</p>
-                </div>
-
-                <div class="partner-card">
-                    <h3>📇 Wedding Stationery & Collaterals</h3>
-                    <p><strong>To Be Updated</strong></p>
-                    <p style="color: #888; font-size: 0.9rem;">Invitations, Cards & Print Materials</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="footer-heart">💑</div>
-        <h3>#OfficiallyMaD</h3>
-        <p style="margin-top: 1rem;">Deshna & Mehul's Wedding</p>
-        <p>25-27 November 2025 • Nathdwara</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2025 All Rights Reserved</p>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+exports.handler = function(context, event, callback) {
+  const twiml = new Twilio.twiml.MessagingResponse();
+  const message = (event.Body || "").toLowerCase().trim();
+
+  // MAIN MENU
+  if (message === 'hello' || message === 'hi' || message === 'start' || message === 'hey' || 
+      message.startsWith('hello ') || message.startsWith('hi ') || message.includes('jai jinendra')) {
+    twiml.message(
+      "💑 *Deshna & Mehul* ✨ #OfficiallyMaD\n25-27 Nov 2025 | Nathdwara\n\n1️⃣ Itinerary\n2️⃣ Contact Info\n3️⃣ Wishes\n4️⃣ Website\n\n💬 Reply *1-4* or *HI*"
+    );
+
+  // SCHEDULE SUMMARY
+  } else if (message === '1' || message.includes('itinerary') || message.includes('schedule')) {
+    twiml.message(
+      "📅 *Wedding Schedule*\n\n25 Nov (Tue) - Mehendi & Sangeet\n26 Nov (Wed) - Haldi & Wedding\n27 Nov (Thu) - Breakfast & Departure\n\n💬 Reply *25/26/27* for details or *ALL*"
+    );
+
+  // FULL SCHEDULE
+  } else if (message === 'all') {
+    twiml.message(
+      "📜 *Complete Schedule*\n\n📆 25 Nov (Tue)\n📍 Radisson Blu (Miraj Stadium), Nathdwara\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n8am Breakfast (ADD, 3rd Floor)\n10:30am Mayra (Bride Side)\n📍 Banquet Hall, 4th Floor\n12:30pm Mehendi + Lunch\n📍 Banquet Hall, 4th Floor\n🎨 Boho Banjara - Green, Yellow, Red, Orange, Blue\n\n7pm Sangeet + Dinner\n📍 Miraj Arena, North End\n🎨 Glitz & Glam - Black, Navy, Silver, Royal Blue\n\n📆 26 Nov (Wed)\n📍 Radisson Blu (Miraj Stadium), Nathdwara\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n8am Breakfast (ADD, 3rd Floor)\n12pm Haldi + Lunch\n📍 Miraj Pavilion, North End\n🎨 High Street - Pink, Yellow, Orange, Purple\n\n6:30pm Baraat Assemble & Sehra Bandi (Lobby)\n7pm Baraat Procession\n8:01pm Varmala & Reception + Dinner\n📍 Miraj Arena, North End\nMidnight Pheras\n📍 Patio, South End\n🎨 Rajwada Royal - Gold, Red, Cream, Hot Pink, Maroon\n\n📆 27 Nov (Thu)\n8am Breakfast (ADD, 3rd)\n\n☕ Refreshments 24×7 @ ADD, 3rd Floor\n💬 *HI*"
+    );
+
+  // NOV 25
+  } else if (message === '25' || message.includes('tuesday') || message.includes('tue')) {
+    twiml.message(
+      "📅 *Tue 25 Nov*\n📍 Radisson Blu (Miraj Stadium), Nathdwara\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n⏰ 8:00am — Breakfast\n📍 ADD, 3rd Floor\n\n⏰ 10:30am — Mayra (Bride Side)\n📍 Banquet Hall, 4th Floor\n\n⏰ 12:30pm — Mehendi + Lunch\n📍 Banquet Hall, 4th Floor\n🎨 *Boho Banjara*\nBurst of color, playful layers, boho accessories\n🎨 Colors: Green, Yellow, Red, Orange, Blue\n\n⏰ 7:00pm — Sangeet + Dinner\n📍 Miraj Arena, North End\n🎨 *Glitz & Glam*\nSparkle & shine in blues and metallics\n🎨 Colors: Black, Navy Blue, Dark Blue, Silver, Royal Blue\n\n_Dinner before sunset available at venue_\n☕ Refreshments 24×7 @ ADD, 3rd Floor\n\n💬 *HI*"
+    );
+
+  // NOV 26
+  } else if (message === '26' || message.includes('wednesday') || message.includes('wed')) {
+    twiml.message(
+      "📅 *Wed 26 Nov*\n📍 Radisson Blu (Miraj Stadium), Nathdwara\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n⏰ 8:00am — Breakfast\n📍 ADD, 3rd Floor\n\n⏰ 12:00pm — Haldi Carnival + Lunch\n📍 Miraj Pavilion, North End\n🎨 *High Street Fashion*\nTrendy pastels with chic cuts, fairy-tale twist\n🎨 Colors: Pink, Yellow, Orange, Purple, Light Green\n\n⏰ 6:30pm — Baraat Assemble & Sehra Bandi\n📍 Lobby\n⏰ 7:00pm — Baraat Procession\n\n⏰ 8:01pm — Varmala & Reception + Dinner\n📍 Miraj Arena, North End\n⏰ Midnight — Pheras\n📍 Patio, South End\n🎨 *Rajwada Royal*\nMost royal look - rich colors & grand traditional wear\n🎨 Colors: Gold, Red, Cream, Hot Pink, Maroon\n\n_Dinner before sunset available at venue_\n☕ Refreshments 24×7 @ ADD, 3rd Floor\n\n💬 *HI*"
+    );
+
+  // NOV 27
+  } else if (message === '27' || message.includes('thursday') || message.includes('thu')) {
+    twiml.message(
+      "📅 *Thu 27 Nov*\n📍 Radisson Blu (Miraj Stadium), Nathdwara\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n⏰ 8:00am — Breakfast\n📍 ADD, 3rd Floor\n\n☕ Refreshments 24×7 @ ADD, 3rd Floor\n\n💕 Thanks for celebrating with us!\n💬 *HI*"
+    );
+
+  // CONTACT INFORMATION MENU
+  } else if (message === '2') {
+    twiml.message(
+      "📞 *Contact Information*\n\n🏨 Hotels:\nRADISSON | SAHI | GOPAL | SSHUBH\n\n📍 Or reply VENUE for main venue details\n\n💬 Type hotel name or VENUE"
+    );
+
+  // RADISSON BLU
+  } else if (message.includes('radisson') || message.includes('blu')) {
+    twiml.message(
+      "🏨 *Radisson Blu*\n📞 +91 74250 86947\nReception: 9 | Housekeeping: 6\n📍 https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n💬 *HI*"
+    );
+
+  // SAHI HOTEL
+  } else if (message.includes('sahi')) {
+    twiml.message(
+      "🏨 *Sahi Hotel*\n📞 7073772203\nReception/Housekeeping: 9\n\n💬 *HI*"
+    );
+
+  // GOPAL DARSHAN
+  } else if (message.includes('gopal')) {
+    twiml.message(
+      "🏨 *Hotel Gopal Darshan*\n📞 7737923212\nReception/Housekeeping: 9\n\n💬 *HI*"
+    );
+
+  // SSHUBH HOTEL
+  } else if (message.includes('shubh') || message.includes('sshubh')) {
+    twiml.message(
+      "🏨 *Sshubh Hotel*\n📞 7726924686\nReception/Housekeeping: 9\n\n💬 *HI*"
+    );
+
+  // VENUE ONLY
+  } else if (message.includes('venue') || message.includes('direction')) {
+    twiml.message(
+      "📍 *Main Venue*\nRadisson Blu (Miraj Stadium)\nNathdwara\n\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n💬 *HI*"
+    );
+
+  // GENERIC CONTACT/HOTEL/HELPDESK - Must come AFTER specific hotels
+  } else if (message.includes('contact') || message.includes('hotel') || message.includes('helpdesk') || message.includes('location')) {
+    twiml.message(
+      "📞 *Contact Information*\n\n🏨 Hotels:\nRADISSON | SAHI | GOPAL | SSHUBH\n\n📍 Main Venue:\nRadisson Blu (Miraj Stadium)\nNathdwara\n🗺️ https://maps.app.goo.gl/WUj63rss4wiT8wGS7\n\n💬 Type hotel name or *HI*"
+    );
+
+  // SEND WISHES
+  } else if (message === '3' || message.includes('wish') || message.includes('message')) {
+    twiml.message(
+      "💌 *Send Your Wishes*\nhttps://docs.google.com/forms/d/e/1FAIpQLSdx8DaeYRaVfbhN6YY4rhOCz8PszjdJ2eoIInD9EqA1u8KtcA/viewform\n_(Compiled into keepsake)_\n\n💬 *HI*"
+    );
+
+  // WEBSITE
+  } else if (message === '4' || message.includes('website') || message.includes('web')) {
+    twiml.message(
+      "🌐 *Wedding Website*\nPhotos, story, travel & gifts\n🔗 https://officiallymad.fun\n\n💬 *HI*"
+    );
+
+  // THANKS
+  } else if (message.includes('thank')) {
+    twiml.message("💕 Welcome! Enjoy! #OfficiallyMaD\n💬 *HI*");
+
+  // FALLBACK - OPTIMIZED (shorter message = lower cost)
+  } else {
+    twiml.message("Reply: 1-Itinerary 2-Contact 3-Wishes 4-Website or *HI*");
+  }
+
+  callback(null, twiml);
+};
