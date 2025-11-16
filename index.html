@@ -72,6 +72,9 @@
             margin-bottom: 0.5rem;
             background: white;
             padding: 8px;
+            /* CRITICAL FIX: Override fade-in animation to ensure logo is always visible */
+            opacity: 1 !important;
+            animation: none !important;
         }
 
         @media (max-width: 768px) {
