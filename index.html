@@ -1499,7 +1499,11 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="wedding-logo.jpeg" alt="Deshna & Mehul Wedding Logo" class="wedding-logo" onerror="this.style.display='none'">
+            <img src="wedding-logo.jpeg" 
+                 alt="Deshna & Mehul Wedding Logo" 
+                 class="wedding-logo"
+                 onload="console.log('Logo loaded successfully!')"
+                 onerror="console.error('Logo failed to load. Tried: wedding-logo.jpeg'); this.style.border='2px dashed #ff0000'; this.alt='Logo not found: wedding-logo.jpeg';">
         </div>
         <h1>DESHNA & MEHUL</h1>
         <div class="hashtag">#OfficiallyMaD</div>
