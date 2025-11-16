@@ -133,7 +133,7 @@
             background: white;
             padding: 1rem;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            sticky: top;
+            position: sticky; /* Corrected property */
             top: 0;
             z-index: 100;
             border-bottom: 3px solid #d8779b;
@@ -1538,13 +1538,29 @@
            without changing the existing layout or interactions.
            ============================== */
         :root {
-            --color-primary: #AB6287;   /* Rose Mauve */
+            --color-primary: #E2D1D0; /* Updated dominant color from theme image */
             --color-accent:  #938068;   /* Taupe Accent */
             --color-bg:      #F6F6EA;   /* Soft Background */
             --color-border:  #DDDDD8;   /* Subtle Border */
             --color-muted:   #AEADA1;   /* Muted Neutral */
             --color-surface: #FFFFFF;   /* Surfaces */
         }
+
+        /* Update header background to use the new primary color */
+        .header {
+            background: linear-gradient(135deg, rgba(226, 209, 208, 0.92), rgba(147, 128, 104, 0.92)),
+                        url('Wedding-design-theme.jpeg') center/cover no-repeat;
+        }
+
+        /* Update navigation and buttons to reflect the new primary color */
+        nav a { color: var(--color-primary); }
+        nav a:hover, nav a.active { background: var(--color-primary); color: #fff; }
+
+        .venue-link, .contact-card .venue-link { background: var(--color-primary); }
+        .venue-link:hover, .contact-card .venue-link:hover { background: var(--color-accent); }
+        .wishes-button { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
+        .whatsapp-float { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); box-shadow: 0 8px 25px rgba(226, 209, 208, 0.5); }
+        .whatsapp-float:hover { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%); box-shadow: 0 12px 35px rgba(226, 209, 208, 0.7); }
 
         /* Base & Surfaces */
         body { background: var(--color-bg); }
@@ -1598,8 +1614,8 @@
         .venue-link, .contact-card .venue-link { background: var(--color-primary); }
         .venue-link:hover, .contact-card .venue-link:hover { background: var(--color-accent); }
         .wishes-button { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); }
-        .whatsapp-float { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); box-shadow: 0 8px 25px rgba(171, 98, 135, 0.5); }
-        .whatsapp-float:hover { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%); box-shadow: 0 12px 35px rgba(171, 98, 135, 0.7); }
+        .whatsapp-float { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%); box-shadow: 0 8px 25px rgba(226, 209, 208, 0.5); }
+        .whatsapp-float:hover { background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%); box-shadow: 0 12px 35px rgba(226, 209, 208, 0.7); }
 
         /* Tabs */
         .tab-btn { border-color: var(--color-primary); color: var(--color-primary); }
@@ -1985,7 +2001,7 @@
     <!-- Quick Action Buttons -->
     <div class="quick-actions">
         <div class="quick-action-btn quick-action-calendar" onclick="addToCalendar()">
-            📅
+                       📅
             <span class="tooltip">Add to Calendar</span>
         </div>
         <div class="quick-action-btn quick-action-location" onclick="openMaps()">
